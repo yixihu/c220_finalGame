@@ -81,12 +81,12 @@ func _physics_process(delta):
 			motion.x = Speed
 			global.facingLeft = false
 			global.facingRight = true
-			get_parent().get_node("movementManager").play("moving_right")
+			get_parent().get_node("movingManager").play("moving_right")
 		elif (ArrowKeys and Input.is_key_pressed(KEY_LEFT)) or (WASD and Input.is_key_pressed(KEY_A)):
 			motion.x = -Speed
 			global.facingLeft = true
 			global.facingRight = false
-			get_parent().get_node("movementManager").play("moving_left")
+			get_parent().get_node("movingManager").play("moving_left")
 		else:
 			motion.x = 0
 			

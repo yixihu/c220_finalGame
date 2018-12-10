@@ -13,7 +13,7 @@ func _process(delta):
 	# animation codes start here===============================================================
 	# attacking 
 	if Input.is_action_just_released("attack_light"):
-		$movementManager.play("attacking")
+		$attackManager.play("attacking")
 		#play the attack animation
 		if global.facingLeft:
 			print("Facing Left Attack")
@@ -23,10 +23,10 @@ func _process(delta):
 	# defending
 	if Input.is_action_just_pressed("attack_defend"):
 #		global.defending = true
-		$AnimationPlayer.play("Defending")
+		$defendManager.play("Defending")
 	# animation codes end here===============================================================
 	
-	if $AnimationPlayer.is_playing():
+	if $defendManager.is_playing():
 		global.defending = true
 	else:
 		global.defending = false

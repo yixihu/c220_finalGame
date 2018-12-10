@@ -19,5 +19,14 @@ func _process(delta):
 			go.restart_scene()
 			global.gameover = false
 			global.score = 0
+			global.enemyRemaining = 8
 			
+	if global.enemyRemaining == 0:
+		get_node("playerCharacter").get_node("Winning").visible = true
+		if Input.is_action_just_pressed("RestartGame"):
+			go.restart_scene()
+			global.gameover = false
+			global.score = 0
+			global.enemyRemaining = 8
+			get_node("playerCharacter").get_node("Winning").visible = false
 	pass
